@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 4 - Víctor Luévano</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        const costoCredito = 360;
+        let nombre;
+        let añoAcademico;
+        let creditos;
+        let cuota = 0;
+        let totalCreditos;
+
+        do {
+            nombre = prompt("Ingresa tu nombre:");
+        } while (nombre === "");
+
+        let bandera = true;
+        do {
+            añoAcademico = parseInt(prompt("Ingresa tu año académico:\n1) Freshman\n2) Sophomore\n3) Junior\n4) Senior:"));
+            switch (añoAcademico) {
+                case 1:
+                    cuota = 50;
+                    bandera = false;
+                    break;
+                case 2:
+                    cuota = 75;
+                    bandera = false;
+                    break;
+                case 3:
+                    cuota = 100;
+                    bandera = false;
+                    break;
+                case 4:
+                    cuota = 100;
+                    bandera = false;
+                    break;
+                default:
+                    bandera = true;
+                    break;
+            }
+        } while (bandera === true);
+
+        do {
+            creditos = parseInt(prompt("Ingresa tu número de créditos:"));
+        } while (isNaN(creditos) || creditos <= 0);
+
+        if (creditos > 12) {
+            totalCreditos = 4320;
+        } else {
+            totalCreditos = creditos * costoCredito;
+        }
+
+        let totalMatricula = totalCreditos + cuota;
+        alert(nombre+ "\nTu matrícula total es " + totalCreditos + " + " + cuota + " = $" + totalMatricula);
+
+    </script>
+</body>
+
+</html>
